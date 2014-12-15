@@ -16,7 +16,7 @@ Below, you'll find an overview of the modules maintained by the core team and co
 | [**waterline**](http://github.com/balderdashy/waterline) | [![Build Status](https://travis-ci.org/balderdashy/waterline.png?branch=master)](https://travis-ci.org/balderdashy/waterline) | [![NPM version](https://badge.fury.io/js/waterline.png)](http://badge.fury.io/js/waterline) |
 | [**anchor**](http://github.com/balderdashy/anchor) | [![Build Status](https://travis-ci.org/balderdashy/anchor.png?branch=master)](https://travis-ci.org/balderdashy/anchor) | [![NPM version](https://badge.fury.io/js/anchor.png)](http://badge.fury.io/js/anchor) |
 | [**waterline-criteria**](http://github.com/balderdashy/waterline-criteria) | [![Build Status](https://travis-ci.org/balderdashy/waterline-criteria.png?branch=master)](https://travis-ci.org/balderdashy/waterline-criteria) | [![NPM version](https://badge.fury.io/js/waterline-criteria.png)](http://badge.fury.io/js/waterline-criteria) |
-| [**waterline-errors**](http://github.com/balderdashy/waterline-errors) | NEEDS_TRAVIS_SETUP | [![NPM version](https://badge.fury.io/js/waterline-errors.png)](http://badge.fury.io/js/waterline-errors) |
+| [**waterline-errors**](http://github.com/vanetix/waterline-errors) | NEEDS_TRAVIS_SETUP | [![NPM version](https://badge.fury.io/js/waterline-errors.png)](http://badge.fury.io/js/waterline-errors) |
 | [**waterline-schema**](http://github.com/balderdashy/waterline-schema) | NEEDS_TRAVIS_SETUP | [![NPM version](https://badge.fury.io/js/waterline-schema.png)](http://badge.fury.io/js/waterline-schema) |
 | [**sails-generate**](http://github.com/balderdashy/sails-generate) | [![Build Status](https://travis-ci.org/balderdashy/sails-generate.png?branch=master)](https://travis-ci.org/balderdashy/sails-generate) | [![NPM version](https://badge.fury.io/js/sails-generate.png)](http://badge.fury.io/js/sails-generate) |
 | [**sails-build-dictionary**](http://github.com/balderdashy/sails-build-dictionary) | N/A | [![NPM version](https://badge.fury.io/js/sails-build-dictionary.png)](http://badge.fury.io/js/sails-build-dictionary) |
@@ -59,13 +59,13 @@ Below, you'll find an overview of the modules maintained by the core team and co
 
 ### Officially-supported adapters
 
-| Repo          |  Build Status (edge)  |  Latest Stable Version   |
-|---------------|---------------------------------------|-----------
-| [Local Disk](https://github.com/balderdashy/sails-disk)    | [![Build Status](https://travis-ci.org/balderdashy/sails-disk.png?branch=master)](https://travis-ci.org/balderdashy/sails-disk)   | [![NPM version](https://badge.fury.io/js/sails-disk.png)](http://badge.fury.io/js/sails-disk)    |
-| [MySQL](https://github.com/balderdashy/sails-mysql)         | [![Build Status](https://travis-ci.org/balderdashy/sails-mysql.png?branch=master)](https://travis-ci.org/balderdashy/sails-mysql)   | [![NPM version](https://badge.fury.io/js/sails-mysql.png)](http://badge.fury.io/js/sails-mysql)    |
-| [PostgreSQL](https://github.com/balderdashy/sails-postgresql)    | [![Build Status](https://travis-ci.org/balderdashy/sails-postgresql.png?branch=master)](https://travis-ci.org/balderdashy/sails-postgresql)   | [![NPM version](https://badge.fury.io/js/sails-postgresql.png)](http://badge.fury.io/js/sails-postgresql)    |
-| [Mongo](https://github.com/balderdashy/sails-mongo)        | [![Build Status](https://travis-ci.org/balderdashy/sails-mongo.png?branch=master)](https://travis-ci.org/balderdashy/sails-mongo)   | [![NPM version](https://badge.fury.io/js/sails-mongo.png)](http://badge.fury.io/js/sails-mongo)    |
-| [Redis](https://github.com/balderdashy/sails-redis)         | [![Build Status](https://travis-ci.org/balderdashy/sails-redis.png?branch=master)](https://travis-ci.org/balderdashy/sails-redis)   | [![NPM version](https://badge.fury.io/js/sails-redis.png)](http://badge.fury.io/js/sails-redis)    |
+| Repo            |  Build Status (edge)                    |  Latest Stable Version   | Platform       |
+| --------------- | --------------------------------------- | ------------------------ | -------------- |
+| [Local Disk](https://github.com/balderdashy/sails-disk)    | [![Build Status](https://travis-ci.org/balderdashy/sails-disk.png?branch=master)](https://travis-ci.org/balderdashy/sails-disk)   | [![NPM version](https://badge.fury.io/js/sails-disk.png)](http://badge.fury.io/js/sails-disk)    | Local disk (`.tmp`) |
+| [MySQL](https://github.com/balderdashy/sails-mysql)         | [![Build Status](https://travis-ci.org/balderdashy/sails-mysql.png?branch=master)](https://travis-ci.org/balderdashy/sails-mysql)   | [![NPM version](https://badge.fury.io/js/sails-mysql.png)](http://badge.fury.io/js/sails-mysql)    | MySQL |
+| [PostgreSQL](https://github.com/balderdashy/sails-postgresql)    | [![Build Status](https://travis-ci.org/balderdashy/sails-postgresql.png?branch=master)](https://travis-ci.org/balderdashy/sails-postgresql)   | [![NPM version](https://badge.fury.io/js/sails-postgresql.png)](http://badge.fury.io/js/sails-postgresql)    | PostgreSQL |
+| [Mongo](https://github.com/balderdashy/sails-mongo)        | [![Build Status](https://travis-ci.org/balderdashy/sails-mongo.png?branch=master)](https://travis-ci.org/balderdashy/sails-mongo)   | [![NPM version](https://badge.fury.io/js/sails-mongo.png)](http://badge.fury.io/js/sails-mongo)    | MongoDB |
+| [Redis](https://github.com/balderdashy/sails-redis)         | [![Build Status](https://travis-ci.org/balderdashy/sails-redis.png?branch=master)](https://travis-ci.org/balderdashy/sails-redis)   | [![NPM version](https://badge.fury.io/js/sails-redis.png)](http://badge.fury.io/js/sails-redis)    | Redis |
 
 
 ### Officially-supported hooks
@@ -98,7 +98,7 @@ Below, you'll find an overview of the modules maintained by the core team and co
 
 #### Adapters
 
-| Repo          |  Build Status (edge)  |  Latest Stable Version   | Interfaces |
+| Repo          |  Build Status (edge)  |  Latest Stable Version   | Platform |
 |---------------|---------------------------------------|--------------------------|------------|
 | [sails-rest](https://github.com/zohararad/sails-rest) |  |  | REST |
 | [sails-oracle](https://github.com/mayconheerdt/sails-oracle) | | | Oracle |
