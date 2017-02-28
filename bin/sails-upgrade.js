@@ -12,46 +12,34 @@ var rconf = require('../lib/app/configuration/rc')();
 
 
 /**
- * `sails new`
+ * `sails upgrade`
  *
- * Generate a new Sails app.
+ * Upgrade a pre v1.0.x app to Sails v1.0.x.
  *
  * ```
  * # In the current directory:
- * sails new
+ * sails upgrade
  * ```
  *
- * ```
- * # As a new directory or within an existing directory:
- * sails new foo
- * ```
- *
- * @stability 3
- * @see http://sailsjs.com/documentation/reference/command-line-interface/sails-new
- * ------------------------------------------------------------------------
- * This command builds `scope` for the generator by scooping up any available
- * configuration using `rc` (merging config from env vars, CLI opts, and
- * relevant `.sailsrc` files).  Then it runs the `sails-generate-new`
- * generator (https://github.com/balderdashy/sails-generate-new).
  */
 
 module.exports = function () {
 
   // Require the `package.json` of the local app, in case it hasn't been required already.
   // This ensures that the package.json is in the cache, which will give us access to
-  // the local `require` module for the app.
+  // the local `require` module for the app.  We'll use that to look for the upgrade tool package.
   var pathToLocalPackageJson = path.resolve(process.cwd(), 'package.json');
   var localPackageJson = require(pathToLocalPackageJson);
 
-  // Attempt to require the migrator
-  var migrator = (function() {
+  // Attempt to require the upgrade tool.
+  var generator = (function() {
     try {
-      return require.cache[pathToLocalPackageJson].require('@sailshq/migrate');
+      return require.cache[pathToLocalPackageJson].require('@sailshq/upgrade');
     } catch (e) {
-      console.log(chalk.bold('Could not find the @sailhq/migrate package in your local app folder.'));
-      console.log('Please run `npm install @sailshq/migrate` and try again.');
+      console.log(chalk.bold('Could not find the @sailhq/upgrade package in your local app folder.'));
+      console.log('Please run `npm install @sailshq/upgrade` and try again.');
       console.log();
-      console.log('Note: migration tool beta is currently available only to Flagship customers.');
+      console.log('Note: upgrade tool beta is currently available only to Flagship customers.');
       process.exit(1);
     }
   })();
@@ -60,8 +48,9 @@ module.exports = function () {
   var scope = {
     rootPath: process.cwd(),
     modules: {
-      'migrate': migrator
+      'upgrade': generator
     },
+    generatorType: 'upgrade',
     sailsRoot: path.resolve(__dirname, '..')
   };
 
@@ -78,7 +67,7 @@ module.exports = function () {
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   _.merge(scope, rconf);
 
-  // Get a temporary logger just for use in `sails new`.
+  // Get a temporary logger just for use in `sails upgrade`.
   // > This is so that logging levels are configurable, even when a
   // > Sails app hasn't been loaded yet.
   var log = CaptainsLog(rconf.log);
@@ -88,8 +77,6 @@ module.exports = function () {
   var cliArguments = Array.prototype.slice.call(arguments);
   cliArguments.pop();
   scope.args = cliArguments;
-
-  scope.generatorType = 'migrate';
 
   return sailsgen(scope, {
     // Handle unexpected errors.
