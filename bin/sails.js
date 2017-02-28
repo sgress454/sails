@@ -59,6 +59,12 @@ cmd.alias('l');
 cmd.action(require('./sails-lift'));
 
 
+// $ sails upgrade
+cmd = program.command('upgrade');
+cmd.unknownOption = NOOP;
+cmd.description('');
+cmd.action(require('./sails-upgrade'));
+
 // $ sails new <appname>
 cmd = program.command('new [path_to_new_app]');
 // cmd.option('--dry');
